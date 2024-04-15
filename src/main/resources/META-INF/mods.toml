@@ -6,7 +6,7 @@ license="${mod_license}"
 
 [[mods]] #mandatory
 # The modid of the mod
-modId="ben_10_magic_addon" #mandatory
+modId="trinity_mods_by_susakushi" #mandatory
 
 version="${mod_version}" #mandatory
 
@@ -18,7 +18,7 @@ authors="${mod_authors}" #optional
 
 description='''${mod_description}'''
 
-[[dependencies.ben_10_magic_addon]] #optional
+[[dependencies.trinity_mods_by_susakushi]] #optional
 
 modId="forge" #mandatory
 
@@ -30,39 +30,39 @@ ordering="NONE"
 
 side="BOTH"
 
-[[dependencies.ben_10_magic_addon]]
+[[dependencies.trinity_mods_by_susakushi]]
 modId="minecraft"
 mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
 versionRange="1.20,1.21"
 ordering="NONE"
 side="BOTH"
-[[dependencies.ben_10_magic_addon]]
+[[dependencies.trinity_mods_by_susakushi]]
 modId="irons_spellbooks"
 mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
 versionRange="1.20.1-3.0.1, "
 ordering="NONE"
 side="BOTH"
-[[dependencies.ben_10_magic_addon]]
+[[dependencies.trinity_mods_by_susakushi]]
 modId="playeranimator" #mandatory
 mandatory=true #mandatory
 versionRange="[1.0.2-rc1+1.20, )" #mandatory
 ordering="AFTER"
 side="BOTH"
-[[dependencies.ben_10_magic_addon]]
+[[dependencies.trinity_mods_by_susakushi]]
 modId="geckolib" #mandatory
 mandatory=true #mandatory
 versionRange="[4.4.2, )" #mandatory
 ordering="NONE"
 side="BOTH"
-[[dependencies.ben_10_magic_addon]]
+[[dependencies.trinity_mods_by_susakushi]]
 modId="curios" #mandatory
 mandatory=true #mandatory
 versionRange="[5.4.7+1.20.1, )" #mandatory
 ordering="NONE"
 side="BOTH"
-[[dependencies.ben_10_magic_addon]]
+[[dependencies.trinity_mods_by_susakushi]]
 modId="caelus" #mandatory
 mandatory=true #mandatory
 versionRange="[3.1.0+1.20, )" #mandatory

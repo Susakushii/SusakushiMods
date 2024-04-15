@@ -1,0 +1,12 @@
+{
+  "item.trinity_mods_by_susakushi.charm_of_luck": "Charm of Luck (Activated)",
+  "item.trinity_mods_by_susakushi.charm_of_reincarnation": "Charm of Reincarnation (Activated)",
+  "item.trinity_mods_by_susakushi.charm_of_fire": "Charm of Fire (Activated)",
+  "item.trinity_mods_by_susakushi.charm_of_electricity": "Charm of Electricity (Activated)",
+  "item.trinity_mods_by_susakushi.charm_of_telekinesis": "Charm of Telekinesis (Activated)",
+  "item.trinity_mods_by_susakushi.the_keystone_of_bezel": "The Keystone of Bezel Ring (Activated)",
+
+  "creativetab.trinity_mods_by_susakushi": "Charms Of Bezel",
+
+  "entity.trinity_mods_by_susakushi.example_entity": "Elsa Monster"
+}

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "ben_10_magic_addon:item/the_keystone_of_bezel"
-  }
-}
