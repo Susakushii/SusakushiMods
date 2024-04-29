@@ -8,5 +8,8 @@
 
   "creativetab.trinity_mods_by_susakushi": "Charms Of Bezel",
 
-  "entity.trinity_mods_by_susakushi.example_entity": "Elsa Monster"
+  "entity.trinity_mods_by_susakushi.example_entity": "Ice Golem",
+
+  "spell.trinity_mods_by_susakushi.summon_ice_golem": "Summon Ice Golem",
+  "effect.trinity_mods_by_susakushi.ice_golem_timer": "Summon Ice Golem"
 }

@@ -33,7 +33,7 @@ public class ModItems implements ICurioItem {
 
     public static final RegistryObject<CurioBaseItem> CHARM_OF_TELEKINESIS = ITEMS.register("charm_of_telekinesis", TelekinesisTalisman::new);
 
-    public static final RegistryObject<CurioBaseItem> THE_KEY_STONE_OF_BEZEL = ITEMS.register("the_keystone_of_bezel",() -> new SimpleAttributeCurio(ItemPropertiesHelper.equipment().stacksTo(1), AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("spell power", 30, AttributeModifier.Operation.MULTIPLY_TOTAL)));
+    public static final RegistryObject<CurioBaseItem> THE_KEY_STONE_OF_BEZEL = ITEMS.register("the_keystone_of_bezel",() -> new SimpleAttributeCurio(ItemPropertiesHelper.equipment().stacksTo(1), AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("spell power", 0.3, AttributeModifier.Operation.MULTIPLY_TOTAL)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

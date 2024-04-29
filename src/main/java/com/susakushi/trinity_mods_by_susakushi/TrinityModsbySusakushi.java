@@ -4,9 +4,11 @@ import com.mojang.logging.LogUtils;
 import com.susakushi.trinity_mods_by_susakushi.block.ModBlocks;
 import com.susakushi.trinity_mods_by_susakushi.curio.slots.Curios;
 import com.susakushi.trinity_mods_by_susakushi.entity.EntityInit;
+import com.susakushi.trinity_mods_by_susakushi.entity.ModmobEffectRegistry;
 import com.susakushi.trinity_mods_by_susakushi.item.ModCreativeTabs;
 import com.susakushi.trinity_mods_by_susakushi.item.ModItems;
 import com.susakushi.trinity_mods_by_susakushi.item.magicAtributesIronSpells.AttributeRegistry;
+import com.susakushi.trinity_mods_by_susakushi.item.magicAtributesIronSpells.ModSpellRegistry;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -39,6 +41,8 @@ public class TrinityModsbySusakushi {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         EntityInit.register(modEventBus);
+        ModmobEffectRegistry.register(modEventBus);
+        ModSpellRegistry.SPELLS.register(modEventBus);
 
         //Magic!
         AttributeRegistry.register(modEventBus);

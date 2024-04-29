@@ -6,28 +6,33 @@ package com.susakushi.trinity_mods_by_susakushi.client.model;// Made with Blockb
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.susakushi.trinity_mods_by_susakushi.TrinityModsbySusakushi;
+import com.susakushi.trinity_mods_by_susakushi.entity.animations.ModAnimationsDefinitions;
 import com.susakushi.trinity_mods_by_susakushi.entity.custom.ExampleEntity;
-import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.Entity;
 
-public class ExampleEntityModel<T extends ExampleEntity> extends EntityModel<T> {
+public class ExampleEntityModel<T extends ExampleEntity> extends HierarchicalModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(TrinityModsbySusakushi.MOD_ID, "example_entity"), "main");
 	private final ModelPart controlerGolem;
+	private final ModelPart head;
 
 	public ExampleEntityModel(ModelPart root) {
 		this.controlerGolem = root.getChild("controlerGolem");
+		this.head = controlerGolem.getChild("body").getChild("neck").getChild("head");
 	}
 
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition controlerGolem = partdefinition.addOrReplaceChild("controlerGolem", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+		PartDefinition controlerGolem = partdefinition.addOrReplaceChild("controlerGolem", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, -1.6F));
 
 		PartDefinition body = controlerGolem.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(-0.3F, -6.75F, 1.5F));
 
@@ -37,19 +42,21 @@ public class ExampleEntityModel<T extends ExampleEntity> extends EntityModel<T> 
 
 		torso.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(24, 19).addBox(-2.25F, -2.15F, -1.0F, 3.25F, 3.25F, 2.25F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.7854F));
 
-		PartDefinition head = body.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.15F, -6.25F, -3.5F));
+		PartDefinition neck = body.addOrReplaceChild("neck", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-		head.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 58).addBox(-1.75F, -1.75F, -1.25F, 3.0F, 2.9F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.3927F, 0.0F, 0.0F));
+		neck.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(47, 55).addBox(-0.75F, -1.0F, -1.0F, 2.0F, 2.25F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.35F, -5.25F, -1.5F, 0.7854F, 0.0F, 0.0F));
 
-		head.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(47, 55).addBox(-0.75F, -1.0F, -1.0F, 2.0F, 2.25F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-0.5F, 1.0F, 2.0F, 0.7854F, 0.0F, 0.0F));
+		PartDefinition head = neck.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.15F, -6.25F, -3.5F));
 
-		PartDefinition Jaw = head.addOrReplaceChild("Jaw", CubeListBuilder.create().texOffs(60, 58).addBox(0.75F, -0.3F, 0.25F, 1.0F, 1.3F, 1.0F, new CubeDeformation(0.01F))
-		.texOffs(56, 58).addBox(-1.75F, -0.3F, 0.25F, 1.0F, 1.3F, 1.0F, new CubeDeformation(0.01F)), PartPose.offsetAndRotation(-0.25F, 1.35F, 0.0F, -1.3439F, 0.0F, 0.0F));
+		head.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 58).addBox(-1.75F, -1.75F, -1.25F, 3.0F, 2.9F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, 0.3927F, 0.0F, 0.0F));
 
-		Jaw.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(56, 61).addBox(-3.75F, -1.05F, -0.75F, 1.0F, 2.0F, 1.0F, new CubeDeformation(-0.01F))
-		.texOffs(60, 61).addBox(-1.25F, -1.05F, -0.75F, 1.0F, 2.0F, 1.0F, new CubeDeformation(-0.01F)), PartPose.offsetAndRotation(2.0F, -0.75F, 0.5F, 0.7854F, 0.0F, 0.0F));
+		PartDefinition jaw = head.addOrReplaceChild("jaw", CubeListBuilder.create().texOffs(60, 58).addBox(0.75F, -0.3F, 0.25F, 1.0F, 1.3F, 1.0F, new CubeDeformation(0.01F))
+				.texOffs(56, 58).addBox(-1.75F, -0.3F, 0.25F, 1.0F, 1.3F, 1.0F, new CubeDeformation(0.01F)), PartPose.offsetAndRotation(-0.25F, 1.35F, 0.0F, -1.3439F, 0.0F, 0.0F));
 
-		Jaw.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(45, 60).addBox(-1.75F, -0.55F, -0.5F, 3.5F, 1.55F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 1.4419F, -0.2146F, 0.3927F, 0.0F, 0.0F));
+		jaw.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(56, 61).addBox(-3.75F, -1.05F, -0.75F, 1.0F, 2.0F, 1.0F, new CubeDeformation(-0.01F))
+				.texOffs(60, 61).addBox(-1.25F, -1.05F, -0.75F, 1.0F, 2.0F, 1.0F, new CubeDeformation(-0.01F)), PartPose.offsetAndRotation(2.0F, -0.75F, 0.5F, 0.7854F, 0.0F, 0.0F));
+
+		jaw.addOrReplaceChild("cube_r6", CubeListBuilder.create().texOffs(45, 60).addBox(-1.75F, -0.55F, -0.5F, 3.5F, 1.55F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 1.4419F, -0.2146F, 0.3927F, 0.0F, 0.0F));
 
 		PartDefinition rightArm = body.addOrReplaceChild("rightArm", CubeListBuilder.create(), PartPose.offsetAndRotation(-4.7F, -2.8169F, 0.4167F, -0.6471F, 0.1059F, 0.139F));
 
@@ -65,7 +72,7 @@ public class ExampleEntityModel<T extends ExampleEntity> extends EntityModel<T> 
 
 		leftLeg.addOrReplaceChild("cube_r11", CubeListBuilder.create().texOffs(36, 20).addBox(-0.75F, -1.25F, -1.0F, 1.5F, 2.5F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.6509F, -3.8574F, 0.0099F, -2.0115F, -1.5272F, 1.2217F));
 
-		 leftLeg.addOrReplaceChild("cube_r12", CubeListBuilder.create().texOffs(35, 26).addBox(-1.0F, -1.375F, -0.75F, 2.0F, 2.5F, 2.5F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -2.375F, 0.0F, 0.0F, -1.5708F, -0.3927F));
+		leftLeg.addOrReplaceChild("cube_r12", CubeListBuilder.create().texOffs(35, 26).addBox(-1.0F, -1.375F, -0.75F, 2.0F, 2.5F, 2.5F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -2.375F, 0.0F, 0.0F, -1.5708F, -0.3927F));
 
 		PartDefinition rightLeg = body.addOrReplaceChild("rightLeg", CubeListBuilder.create(), PartPose.offset(-3.2F, 5.25F, 0.0F));
 
@@ -83,16 +90,36 @@ public class ExampleEntityModel<T extends ExampleEntity> extends EntityModel<T> 
 
 		LeftArm.addOrReplaceChild("cube_r18", CubeListBuilder.create().texOffs(52, 48).addBox(-1.5F, -1.75F, -1.5F, 3.0F, 3.5F, 3.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -0.7921F, -0.8425F, 0.3752F, 0.0F, 0.0F));
 
-		return LayerDefinition.create(meshdefinition, 256, 256);
+		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 
 	@Override
 	public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+		this.root().getAllParts().forEach(ModelPart::resetPose);
+		this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
 
+
+		this.animate(((ExampleEntity) entity).idleAnimationState, ModAnimationsDefinitions.IDLE, ageInTicks, 1f);
+		this.animate(((ExampleEntity) entity).attackAnimationState, ModAnimationsDefinitions.GOLEN_ATACK, ageInTicks, 1f);
+		this.animateWalk(ModAnimationsDefinitions.GOLEN_WALKING, limbSwing, limbSwingAmount,2f,2.5f);
 	}
+
+	private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {
+		pNetHeadYaw = Mth.clamp(pNetHeadYaw, -30.0F, 30.0F);
+		pHeadPitch = Mth.clamp(pHeadPitch, -25.0F, 45.0F);
+
+		this.head.yRot = pNetHeadYaw * ((float)Math.PI / 180F);
+		this.head.xRot = pHeadPitch * ((float)Math.PI / 180F);
+	}
+
 
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 		controlerGolem.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+	}
+
+	@Override
+	public ModelPart root(){
+		return controlerGolem;
 	}
 }

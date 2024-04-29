@@ -15,7 +15,7 @@ public class ExampleEntityRender extends MobRenderer<ExampleEntity, ExampleEntit
 
 
     public ExampleEntityRender(EntityRendererProvider.Context pContext) {
-        super(pContext, new ExampleEntityModel<>(pContext.bakeLayer(ExampleEntityModel.LAYER_LOCATION)),0.10f);
+        super(pContext, new ExampleEntityModel<>(pContext.bakeLayer(ExampleEntityModel.LAYER_LOCATION)),0.50f);
     }
 
     @Override
