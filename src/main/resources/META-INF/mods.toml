@@ -6,7 +6,7 @@ license="${mod_license}"
 
 [[mods]] #mandatory
 # The modid of the mod
-modId="trinity_mods_by_susakushi" #mandatory
+modId="trinity_sourcery" #mandatory
 
 version="${mod_version}" #mandatory
 
@@ -18,7 +18,7 @@ authors="${mod_authors}" #optional
 
 description='''${mod_description}'''
 
-[[dependencies.trinity_mods_by_susakushi]] #optional
+[[dependencies.trinity_sourcery]] #optional
 
 modId="forge" #mandatory
 
@@ -30,21 +30,21 @@ ordering="NONE"
 
 side="BOTH"
 
-[[dependencies.trinity_mods_by_susakushi]]
+[[dependencies.trinity_sourcery]]
 modId="minecraft"
 mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
 versionRange="1.20,1.21"
 ordering="NONE"
 side="BOTH"
-[[dependencies.trinity_mods_by_susakushi]]
+[[dependencies.trinity_sourcery]]
 modId="irons_spellbooks"
 mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
 versionRange="1.20.1-3.0.1, "
 ordering="NONE"
 side="BOTH"
-[[dependencies.trinity_mods_by_susakushi]]
+[[dependencies.trinity_sourcery]]
 modId="curios" #mandatory
 mandatory=true #mandatory
 versionRange="[5.4.7+1.20.1, )" #mandatory

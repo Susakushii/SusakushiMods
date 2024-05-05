@@ -1,0 +1,15 @@
+{
+  "item.trinity_sourcery.charm_of_luck": "Charm of Luck (Activated)",
+  "item.trinity_sourcery.charm_of_reincarnation": "Charm of Reincarnation (Activated)",
+  "item.trinity_sourcery.charm_of_fire": "Charm of Fire (Activated)",
+  "item.trinity_sourcery.charm_of_electricity": "Charm of Electricity (Activated)",
+  "item.trinity_sourcery.charm_of_telekinesis": "Charm of Telekinesis (Activated)",
+  "item.trinity_sourcery.the_keystone_of_bezel": "The Keystone of Bezel Ring (Activated)",
+
+  "creativetab.trinity_sourcery": "Charms Of Bezel",
+
+  "entity.trinity_sourcery.example_entity": "Ice Golem",
+
+  "spell.trinity_sourcery.summon_ice_golem": "Summon Ice Golem",
+  "effect.trinity_sourcery.ice_golem_timer": "Summon Ice Golem"
+}

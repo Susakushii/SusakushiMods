@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "trinity_mods_by_susakushi:item/charm_of_telekinesis"
-  }
-}

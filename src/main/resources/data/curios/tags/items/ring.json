@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
-    "trinity_mods_by_susakushi:the_keystone_of_bezel",
-    "trinity_mods_by_susakushi:charm_of_telekinesis",
-    "trinity_mods_by_susakushi:charm_of_electricity",
-    "trinity_mods_by_susakushi:charm_of_fire",
-    "trinity_mods_by_susakushi:charm_of_reincarnation",
-    "trinity_mods_by_susakushi:charm_of_luck"
+    "trinity_sourcery:the_keystone_of_bezel",
+    "trinity_sourcery:charm_of_telekinesis",
+    "trinity_sourcery:charm_of_electricity",
+    "trinity_sourcery:charm_of_fire",
+    "trinity_sourcery:charm_of_reincarnation",
+    "trinity_sourcery:charm_of_luck"
   ]
 }
