@@ -9,6 +9,8 @@ import com.susakushi.trinity_sourcery.item.ModCreativeTabs;
 import com.susakushi.trinity_sourcery.item.ModItems;
 import com.susakushi.trinity_sourcery.item.magicAtributesIronSpells.AttributeRegistry;
 import com.susakushi.trinity_sourcery.item.magicAtributesIronSpells.ModSpellRegistry;
+import com.susakushi.trinity_sourcery.gui.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -42,6 +44,7 @@ public class TrinitySourcery {
         EntityInit.register(modEventBus);
         ModmobEffectRegistry.register(modEventBus);
         ModSpellRegistry.SPELLS.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         //Magic!
         AttributeRegistry.register(modEventBus);
@@ -81,7 +84,6 @@ public class TrinitySourcery {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
         }
     }
 }

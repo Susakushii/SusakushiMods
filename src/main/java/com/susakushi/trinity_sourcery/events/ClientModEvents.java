@@ -4,10 +4,13 @@ import com.susakushi.trinity_sourcery.TrinitySourcery;
 import com.susakushi.trinity_sourcery.client.model.ExampleEntityModel;
 import com.susakushi.trinity_sourcery.client.renderer.ExampleEntityRender;
 import com.susakushi.trinity_sourcery.entity.EntityInit;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.awt.*;
 
 @Mod.EventBusSubscriber(modid = TrinitySourcery.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientModEvents {

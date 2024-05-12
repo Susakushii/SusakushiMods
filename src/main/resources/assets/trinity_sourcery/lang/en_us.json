@@ -11,5 +11,6 @@
   "entity.trinity_sourcery.example_entity": "Ice Golem",
 
   "spell.trinity_sourcery.summon_ice_golem": "Summon Ice Golem",
-  "effect.trinity_sourcery.ice_golem_timer": "Summon Ice Golem"
+  "effect.trinity_sourcery.ice_golem_timer": "Summon Ice Golem",
+  "gui.custom_gui_title": "Test"
 }
