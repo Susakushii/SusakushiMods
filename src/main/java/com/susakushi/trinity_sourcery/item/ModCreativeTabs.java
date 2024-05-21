@@ -23,6 +23,7 @@ public class ModCreativeTabs{
                         pOutput.accept(ModItems.CHARM_OF_REINCARNATION.get());
                         pOutput.accept(ModItems.CHARM_OF_TELEKINESIS.get());
                         pOutput.accept(ModItems.THE_KEY_STONE_OF_BEZEL.get());
+                        pOutput.accept(ModItems.CHARM_HOLDER.get());
 
                     })
                     .build());

@@ -5,11 +5,12 @@ import com.susakushi.trinity_sourcery.block.ModBlocks;
 import com.susakushi.trinity_sourcery.curio.slots.Curios;
 import com.susakushi.trinity_sourcery.entity.EntityInit;
 import com.susakushi.trinity_sourcery.entity.ModmobEffectRegistry;
+import com.susakushi.trinity_sourcery.gui.CharmHolderMenuScreen;
 import com.susakushi.trinity_sourcery.item.ModCreativeTabs;
 import com.susakushi.trinity_sourcery.item.ModItems;
 import com.susakushi.trinity_sourcery.item.magicAtributesIronSpells.AttributeRegistry;
 import com.susakushi.trinity_sourcery.item.magicAtributesIronSpells.ModSpellRegistry;
-import com.susakushi.trinity_sourcery.gui.ModMenuTypes;
+import com.susakushi.trinity_sourcery.util.ModMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -44,7 +45,7 @@ public class TrinitySourcery {
         EntityInit.register(modEventBus);
         ModmobEffectRegistry.register(modEventBus);
         ModSpellRegistry.SPELLS.register(modEventBus);
-        ModMenuTypes.register(modEventBus);
+        ModMenuTypes.MENU_TYPES.register(modEventBus);
 
         //Magic!
         AttributeRegistry.register(modEventBus);
@@ -84,6 +85,7 @@ public class TrinitySourcery {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            MenuScreens.register(ModMenuTypes.CHARM_HOLDER_MENU.get(), CharmHolderMenuScreen::new);
         }
     }
 }

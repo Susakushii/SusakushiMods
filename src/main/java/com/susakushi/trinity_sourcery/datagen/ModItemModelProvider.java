@@ -24,6 +24,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleCurioItem(ModItems.CHARM_OF_REINCARNATION);
         simpleCurioItem(ModItems.CHARM_OF_TELEKINESIS);
         simpleCurioItem(ModItems.THE_KEY_STONE_OF_BEZEL);
+        simpleItem(ModItems.CHARM_HOLDER);
 
     }
 

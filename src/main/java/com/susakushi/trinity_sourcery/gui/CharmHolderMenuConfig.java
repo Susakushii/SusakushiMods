@@ -21,12 +21,12 @@ public class CharmHolderMenuConfig implements ContainerListener {
     public static final String INVENTORY_TAG = "Inventory";
     public static final String EXTENDED_TAG = "Extended";
 
-    private SimpleContainer inventory;
+    public SimpleContainer inventory;
     private LazyOptional<?> itemHandler = null;
 
-    private void createInventory() {
+    public void createInventory() {
         SimpleContainer simplecontainer = this.inventory;
-        this.inventory = new SimpleContainer(54);
+        this.inventory = new SimpleContainer(6);
         if (simplecontainer != null) {
             simplecontainer.removeListener((net.minecraft.world.ContainerListener) this);
             int i = Math.min(simplecontainer.getContainerSize(), this.inventory.getContainerSize());

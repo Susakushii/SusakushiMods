@@ -23,6 +23,8 @@ public class ModItems implements ICurioItem {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TrinitySourcery.MOD_ID);
 
+    public static final RegistryObject<Item> CHARM_HOLDER = ITEMS.register("charm_holder",CharmHolder::new);
+
     public static final RegistryObject<CurioBaseItem> CHARM_OF_LUCKY = ITEMS.register("charm_of_luck", LuckyTalisman::new);
 
     public static final RegistryObject<CurioBaseItem> CHARM_OF_REINCARNATION = ITEMS.register("charm_of_reincarnation", ReincarnationTalisman::new);
